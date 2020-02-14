@@ -1,0 +1,18 @@
+fdsa
+<table *ngIf="books" class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">id</th>
+            <th scope="col">title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books; index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{book.id}}</td>
+            <td>{{book.volumeInfo.title}}</td>
+            <td><button class="btn btn-primary" (click)="addToWishList(book.id, book.volumeInfo.title)">Add</button></td>
+        </tr>
+    </tbody>
+</table>
